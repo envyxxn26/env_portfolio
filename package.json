@@ -1,0 +1,22 @@
+{
+  "name": "env-portfolio",
+  "version": "1.0.0",
+  "description": "Node server for the ENV portfolio site",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "portfolio",
+    "express",
+    "node"
+  ],
+  "author": "Enrico Villena",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
