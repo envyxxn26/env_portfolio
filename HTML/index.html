@@ -19,14 +19,22 @@
         <img src="../assets/Logo.png" alt="ENVY">
       </a>
 
-      <div class="nav-links">
-        <a href="#work">Work</a>
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#contact">Contact</a>
+      <div class="nav-menu" id="primary-navigation">
+        <div class="nav-links">
+          <a href="#work">Work</a>
+          <a href="about.html">About</a>
+          <a href="#experience">Experience</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <a href="#contact" class="nav-cta">Start a project</a>
       </div>
 
-      <a href="#contact" class="nav-cta">Start a project</a>
+      <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primary-navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </nav>
   </header>
 
@@ -102,13 +110,9 @@
           <span>Figma</span>
         </div>
 
-        <div class="tv-container" role="img" aria-label="Content Not Available">
-          <div class="tv-screen">
-            <div class="static" aria-hidden="true"></div>
-            <div class="error-text">Content Not Available</div>
-          </div>
-          <div class="tv-stand" aria-hidden="true"></div>
-        </div>
+        <button class="card-link project-unavailable" type="button" data-project="SUKI" aria-label="View SUKI project" aria-haspopup="dialog" aria-controls="project-error-page">
+          VIEW PROJECT <span class="arrow" aria-hidden="true">→</span>
+        </button>
       </article>
 
       <article class="card">
@@ -147,13 +151,9 @@
           <span>Motion</span>
         </div>
 
-        <div class="tv-container" role="img" aria-label="Content Not Available">
-          <div class="tv-screen">
-            <div class="static" aria-hidden="true"></div>
-            <div class="error-text">Content Not Available</div>
-          </div>
-          <div class="tv-stand" aria-hidden="true"></div>
-        </div>
+        <button class="card-link project-unavailable" type="button" data-project="AuraAI" aria-label="View AuraAI project" aria-haspopup="dialog" aria-controls="project-error-page">
+          VIEW PROJECT <span class="arrow" aria-hidden="true">→</span>
+        </button>
       </article>
 
       <article class="card">
@@ -172,13 +172,9 @@
           <span>Tag2</span>
         </div>
 
-        <div class="tv-container" role="img" aria-label="Content Not Available">
-          <div class="tv-screen">
-            <div class="static" aria-hidden="true"></div>
-            <div class="error-text">Content Not Available</div>
-          </div>
-          <div class="tv-stand" aria-hidden="true"></div>
-        </div>
+        <button class="card-link project-unavailable" type="button" data-project="Catalysta" aria-label="View Catalysta project" aria-haspopup="dialog" aria-controls="project-error-page">
+          VIEW PROJECT <span class="arrow" aria-hidden="true">→</span>
+        </button>
       </article>
 
     </div>
@@ -341,10 +337,77 @@
     </div>
   </dialog>
 
+  <dialog class="project-error-page" id="project-error-page" aria-labelledby="project-error-title">
+    <div class="project-error-screen">
+      <header class="project-error-header">
+        <span class="project-error-brand">ENVY <span>// PROJECT ARCHIVE</span></span>
+      </header>
+
+      <main class="project-error-content">
+        <span class="project-error-code">ERROR 404 // ENDPOINT NOT FOUND</span>
+        <h2 id="project-error-title">PROJECT <span>UNAVAILABLE</span></h2>
+        <p><strong id="project-error-name">This project</strong> does not have a live website or connected system yet.</p>
+
+        <div class="project-error-devices">
+          <div class="tv-container" role="img" aria-label="Unresponsive project display showing content unavailable">
+            <div class="tv-screen">
+              <div class="static" aria-hidden="true"></div>
+              <div class="error-text">Content Not Available</div>
+            </div>
+            <div class="tv-stand" aria-hidden="true"></div>
+          </div>
+
+          <div class="project-remote" role="group" aria-label="Project navigation remote">
+            <span class="remote-bumper remote-bumper-top" aria-hidden="true"></span>
+            <span class="remote-bumper remote-bumper-bottom" aria-hidden="true"></span>
+            <span class="remote-brand" aria-hidden="true">ENVY</span>
+
+            <div class="remote-dpad" aria-label="Navigation controls">
+              <button class="remote-button remote-up" type="button" data-projects-back aria-label="Back to projects"><span class="remote-icon" aria-hidden="true">&#9211;</span></button>
+              <button class="remote-button remote-left" type="button" data-projects-back aria-label="Back to projects"><span class="remote-icon" aria-hidden="true">&#8592;</span></button>
+              <button class="remote-button remote-right" type="button" data-projects-back aria-label="Back to projects"><span class="remote-icon" aria-hidden="true">&#8594;</span></button>
+              <button class="remote-button remote-down" type="button" data-projects-back aria-label="Back to projects"><span class="remote-icon" aria-hidden="true">&#8595;</span></button>
+            </div>
+
+            <div class="remote-mid-controls">
+              <div class="remote-left-controls">
+                <button class="remote-bt-button" type="button" data-projects-back aria-label="Back to projects"><span class="remote-icon" aria-hidden="true">&#8962;</span></button>
+              </div>
+              <button class="remote-start-button" type="button" data-projects-back aria-label="Back to projects">
+                <span class="start-label" aria-hidden="true">START</span>
+                <span class="remote-icon" aria-hidden="true">&#8617;</span>
+              </button>
+            </div>
+
+            <button class="remote-main-pad" type="button" data-projects-back aria-label="Back to projects">
+              <span class="remote-icon" aria-hidden="true">&#9638;</span>
+              <span>PROJECTS</span>
+              <span class="remote-notch remote-notch-top" aria-hidden="true"></span>
+              <span class="remote-notch remote-notch-right" aria-hidden="true"></span>
+              <span class="remote-notch remote-notch-bottom" aria-hidden="true"></span>
+              <span class="remote-notch remote-notch-left" aria-hidden="true"></span>
+            </button>
+          </div>
+        </div>
+
+        <div class="project-error-status">
+          <span>CONNECTION STATUS</span>
+          <code>NO_LIVE_ENDPOINT</code>
+        </div>
+
+        <button class="btn-primary project-error-back" type="button" data-projects-back>
+          BACK TO PROJECTS <span aria-hidden="true">←</span>
+        </button>
+      </main>
+
+      <footer class="project-error-footer">ENVY // PROJECT STATUS RESPONSE</footer>
+    </div>
+  </dialog>
+
   <dialog class="contact-modal resume-modal" id="resume-download-dialog" aria-labelledby="resume-modal-title">
     <div class="contact-modal-content resume-modal-content">
       <div class="resume-modal-header">
-        <span class="resume-modal-label">RESUME_DOWNLOAD</span>
+        <span class="resume-modal-label">RÉSUMÉ_DOWNLOAD</span>
         <div class="resume-modal-dots" aria-hidden="true"><span></span><span></span><span></span></div>
       </div>
       <button class="contact-modal-close resume-modal-close" type="button" aria-label="Close download confirmation">&times;</button>
