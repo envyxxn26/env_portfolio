@@ -34,3 +34,19 @@
     event.preventDefault();
     closeContactModalWithAnimation();
   });
+
+  const resumeModal = document.querySelector('.resume-modal');
+  const resumeDownloadButton = document.querySelector('.resume-download');
+  const closeResumeModal = resumeModal?.querySelector('.resume-modal-close');
+  const cancelResumeDownload = resumeModal?.querySelector('.resume-cancel');
+  const confirmResumeDownload = resumeModal?.querySelector('.resume-confirm');
+
+  resumeDownloadButton?.addEventListener('click', () => resumeModal?.showModal());
+
+  const closeResumeDownloadModal = () => resumeModal?.close();
+  closeResumeModal?.addEventListener('click', closeResumeDownloadModal);
+  cancelResumeDownload?.addEventListener('click', closeResumeDownloadModal);
+  confirmResumeDownload?.addEventListener('click', closeResumeDownloadModal);
+  resumeModal?.addEventListener('click', (event) => {
+    if(event.target === resumeModal) closeResumeDownloadModal();
+  });
