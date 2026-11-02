@@ -172,7 +172,7 @@
   }
   .btn-primary:hover{ filter:brightness(1.12); transform:translateX(2px); }
   .btn-ghost{
-    border:1px solid var(--line); color:var(--white);
+    border:1px solid var(--line); color:var(--white); background:transparent;
     clip-path:polygon(14px 0,100% 0,calc(100% - 14px) 100%,0 100%);
     transition:border-color .2s ease, background .2s ease;
   }
@@ -298,6 +298,46 @@
   }
   .card-link .arrow{ transition:transform .25s ease; }
   .card:hover .card-link .arrow{ transform:translateX(5px); }
+
+  .tv-container{
+    position:relative; z-index:1;
+    display:flex; flex-direction:column; align-items:center;
+    width:min(300px, 100%); margin:18px auto 0;
+  }
+  .tv-screen{
+    position:relative; width:100%; aspect-ratio:3 / 2;
+    background:#000; border:10px solid #333; border-radius:10px;
+    box-shadow:0 0 20px rgba(0,0,0,0.8), inset 0 0 50px rgba(255,255,255,0.2);
+    overflow:hidden;
+  }
+  .static{
+    position:absolute; inset:0;
+    background:repeating-linear-gradient(0deg, #000, #000 1px, #111 1px, #fff 1px, #333 2px);
+    animation:flicker 0.1s steps(20) infinite;
+    z-index:1;
+  }
+  .error-text{
+    position:absolute; top:50%; left:50%; transform:translate(-50%, -50%);
+    color:var(--red); font-family:var(--mono); font-size:13px;
+    font-weight:700; letter-spacing:0; text-align:center; white-space:nowrap;
+    text-shadow:2px 2px 5px #000; z-index:2;
+    animation:glitch 0.5s infinite;
+  }
+  .tv-stand{
+    width:50%; height:10px; margin-top:10px;
+    background:#333; border-radius:5px;
+    box-shadow:0 5px 10px rgba(0,0,0,0.7);
+  }
+  @keyframes flicker{
+    0%{ opacity:0.8; transform:scaleY(1); }
+    50%{ opacity:1; transform:scaleY(1.01); }
+    100%{ opacity:0.7; transform:scaleY(0.99); }
+  }
+  @keyframes glitch{
+    0%, 100%{ transform:translate(-50%, -50%) skewX(5deg); opacity:0.9; }
+    25%, 75%{ transform:translate(-50%, -50%) skewX(-5deg); opacity:0.8; }
+    50%{ transform:translate(-50%, -50%) skewX(0); opacity:1; }
+  }
 
   /* ---------- ABOUT SECTION ---------- */
   .about{ background:var(--bg-alt); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }

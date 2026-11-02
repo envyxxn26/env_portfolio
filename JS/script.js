@@ -46,7 +46,9 @@
   const closeResumeDownloadModal = () => resumeModal?.close();
   closeResumeModal?.addEventListener('click', closeResumeDownloadModal);
   cancelResumeDownload?.addEventListener('click', closeResumeDownloadModal);
-  confirmResumeDownload?.addEventListener('click', closeResumeDownloadModal);
+  confirmResumeDownload?.addEventListener('click', () => {
+    setTimeout(closeResumeDownloadModal, 0);
+  });
   resumeModal?.addEventListener('click', (event) => {
     if(event.target === resumeModal) closeResumeDownloadModal();
   });

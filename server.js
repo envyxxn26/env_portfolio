@@ -5,6 +5,11 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 app.disable('x-powered-by');
+
+app.get('/download-resume', (req, res) => {
+  res.download(path.join(__dirname, 'assets', 'Enrico_Resume.pdf'), 'Enrico_Resume.pdf');
+});
+
 app.use(express.static(path.join(__dirname)));
 
 app.get('/', (req, res) => {
